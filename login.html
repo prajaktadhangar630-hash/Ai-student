@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Support</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+<div class="login-wrapper">
+
+    <div class="login-intro">
+
+        <div class="welcome-icon">🌱</div>
+
+        <span class="badge">AI-ASSISTED LEARNING SUPPORT</span>
+
+        <h1>Every Child Learns<br><span>Differently.</span></h1>
+
+        <p>
+            Our system helps identify possible learning difficulties
+            at an early stage and provides personalized learning support.
+        </p>
+
+        <div class="feature-list">
+
+            <div class="feature-item">
+                <span>✓</span>
+                Early Learning Screening
+            </div>
+
+            <div class="feature-item">
+                <span>✓</span>
+                Learning Pattern Detection
+            </div>
+
+            <div class="feature-item">
+                <span>✓</span>
+                Area-wise Performance
+            </div>
+
+            <div class="feature-item">
+                <span>✓</span>
+                Personalized Support
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="login-card">
+
+        <div class="login-top-icon">🎒</div>
+
+        <h2>Welcome!</h2>
+
+        <p>Let's begin your learning journey.</p>
+
+        <form onsubmit="loginUser(event)">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+                required
+            >
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                required
+            >
+
+            <button type="submit" class="main-btn">
+                Start Learning →
+            </button>
+
+        </form>
+
+        <div id="loginMessage"></div>
+
+        <small>
+            Student Learning Support System
+        </small>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

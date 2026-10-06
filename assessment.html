@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Learning Screening</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 AI Learning Support
+        </div>
+
+        <div class="step-text">
+            Step 2 of 3
+        </div>
+
+    </header>
+
+
+    <main class="assessment-page">
+
+        <div class="assessment-header">
+
+            <span class="badge">
+                LEARNING SCREENING
+            </span>
+
+            <h1>
+                Let's Explore How You Learn
+            </h1>
+
+            <p>
+                Answer the questions carefully. There are no scary results —
+                this screening simply helps identify areas where extra support
+                may be useful.
+            </p>
+
+        </div>
+
+
+        <form id="assessmentForm"
+              onsubmit="submitDynamicAssessment(event)">
+
+            <div id="questionsContainer"></div>
+
+
+            <div class="assessment-note">
+
+                💡 <b>Remember:</b>
+
+                This is a friendly learning screening.
+                It is not a test of intelligence and does not give a medical diagnosis.
+
+            </div>
+
+
+            <button type="submit"
+                    class="main-btn center-btn">
+
+                Submit & Start AI Screening →
+
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <!-- questions.js must come first -->
+    <script src="questions.js"></script>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

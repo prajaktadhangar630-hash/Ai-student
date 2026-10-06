@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Learning Screening Result</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        🌱 AI Learning Support
+    </div>
+
+    <div class="step-text">
+        Screening Result
+    </div>
+
+</header>
+
+
+<main class="result-page">
+
+
+<div class="result-header">
+
+    <span class="badge">
+        AI-ASSISTED SCREENING RESULT
+    </span>
+
+    <h1 id="studentName">
+        Student's Learning Result
+    </h1>
+
+    <p>
+        A simple view of learning performance and areas
+        where additional support may help.
+    </p>
+
+</div>
+
+
+<!-- OVERALL -->
+
+<div class="overall-card">
+
+    <div>
+
+        <h2>Overall Learning Performance</h2>
+
+        <p id="overallMessage">
+            Analyzing...
+        </p>
+
+    </div>
+
+
+    <div class="overall-score"
+         id="overallScore">
+
+        0%
+
+    </div>
+
+</div>
+
+
+<!-- DETECTION -->
+
+<div class="detection-card">
+
+    <div class="detection-icon">
+        🔍
+    </div>
+
+    <div>
+
+        <span class="badge">
+            EARLY SCREENING
+        </span>
+
+        <h2 id="detectionTitle">
+            Learning Pattern
+        </h2>
+
+        <p id="detectionText">
+            Checking areas that may need support...
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- AREA ANALYSIS -->
+
+<h2 class="result-title">
+    📊 Learning Area Analysis
+</h2>
+
+
+<div class="result-grid">
+
+
+    <div class="result-card">
+
+        <h3>📖 Reading</h3>
+
+        <div class="score"
+             id="readingScore">
+            0%
+        </div>
+
+        <div class="mini-progress">
+            <div id="readingBar"></div>
+        </div>
+
+        <p id="readingStatus"></p>
+
+        <small id="readingSupport"></small>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <h3>✍️ Writing</h3>
+
+        <div class="score"
+             id="writingScore">
+            0%
+        </div>
+
+        <div class="mini-progress">
+            <div id="writingBar"></div>
+        </div>
+
+        <p id="writingStatus"></p>
+
+        <small id="writingSupport"></small>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <h3>🔢 Mathematics</h3>
+
+        <div class="score"
+             id="mathematicsScore">
+            0%
+        </div>
+
+        <div class="mini-progress">
+            <div id="mathematicsBar"></div>
+        </div>
+
+        <p id="mathematicsStatus"></p>
+
+        <small id="mathematicsSupport"></small>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <h3>🧠 Memory</h3>
+
+        <div class="score"
+             id="memoryScore">
+            0%
+        </div>
+
+        <div class="mini-progress">
+            <div id="memoryBar"></div>
+        </div>
+
+        <p id="memoryStatus"></p>
+
+        <small id="memorySupport"></small>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <h3>🎯 Attention</h3>
+
+        <div class="score"
+             id="attentionScore">
+            0%
+        </div>
+
+        <div class="mini-progress">
+            <div id="attentionBar"></div>
+        </div>
+
+        <p id="attentionStatus"></p>
+
+        <small id="attentionSupport"></small>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <h3>💭 Comprehension</h3>
+
+        <div class="score"
+             id="comprehensionScore">
+            0%
+        </div>
+
+        <div class="mini-progress">
+            <div id="comprehensionBar"></div>
+        </div>
+
+        <p id="comprehensionStatus"></p>
+
+        <small id="comprehensionSupport"></small>
+
+    </div>
+
+
+</div>
+
+
+<!-- OUR SOLUTION -->
+
+<div class="our-solution-result">
+
+    <div class="solution-result-icon">
+        💡
+    </div>
+
+    <div>
+
+        <span class="badge">
+            OUR SOLUTION
+        </span>
+
+        <h2>
+            Personalized Learning Support
+        </h2>
+
+        <p>
+            Instead of stopping at detection,
+            the system connects the identified learning
+            area with a simple support activity.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- SUPPORT -->
+
+<div class="support-card">
+
+    <h2>
+        🌟 Suggested Support
+    </h2>
+
+    <p class="support-intro">
+        These suggestions are based on the screening pattern.
+    </p>
+
+    <ul id="supportList"></ul>
+
+</div>
+
+
+<!-- POSITIVE MESSAGE -->
+
+<div class="encouragement-card">
+
+    <div class="encouragement-icon">
+        🌈
+    </div>
+
+    <div>
+
+        <h2>
+            Keep Learning!
+        </h2>
+
+        <p>
+            Every child has different strengths.
+            Extra practice in one area does not define a child's ability.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- DISCLAIMER -->
+
+<div class="result-note">
+
+    <b>Important:</b>
+
+    This prototype provides an educational screening indication
+    based on assessment responses. It is not a medical or clinical
+    diagnosis.
+
+</div>
+
+
+<div class="result-buttons">
+
+    <button
+        class="secondary-btn"
+        onclick="startAgain()">
+
+        ↻ Try Again
+
+    </button>
+
+</div>
+
+
+</main>
+
+
+<script>
+
+let studentData =
+    JSON.parse(
+        localStorage.getItem("studentInfo")
+    );
+
+
+let performance =
+    JSON.parse(
+        localStorage.getItem("studentPerformance")
+    );
+
+
+if (!studentData || !performance) {
+
+    alert("Assessment data not found.");
+
+    window.location.href =
+        "assessment.html";
+
+}
+
+
+document.getElementById("studentName")
+.innerText =
+studentData.name +
+"'s Learning Result";
+
+
+/* ================= SUPPORT DATA ================= */
+
+const supportSuggestions = {
+
+    reading:
+    "Try short story reading, new-word cards and read-aloud practice.",
+
+    writing:
+    "Practice spelling, sentence formation and short creative writing.",
+
+    mathematics:
+    "Use step-by-step calculations, number games and simple daily problems.",
+
+    memory:
+    "Use repetition, picture-memory games and recall activities.",
+
+    attention:
+    "Try short focused activities, matching games and observation exercises.",
+
+    comprehension:
+    "Read short passages and answer simple questions about the main idea."
+
+};
+
+
+/* ================= SUPPORT LIST ================= */
+
+let supportList =
+    document.getElementById("supportList");
+
+let supportAreas = [];
+
+
+/* ================= SHOW RESULT ================= */
+
+function showResult(area, score) {
+
+    let scoreElement =
+        document.getElementById(
+            area + "Score"
+        );
+
+    let bar =
+        document.getElementById(
+            area + "Bar"
+        );
+
+    let status =
+        document.getElementById(
+            area + "Status"
+        );
+
+    let support =
+        document.getElementById(
+            area + "Support"
+        );
+
+
+    scoreElement.innerText =
+        score + "%";
+
+
+    bar.style.width =
+        score + "%";
+
+
+    if (score < 60) {
+
+        status.innerText =
+            "⚠️ May Need Support";
+
+        status.className =
+            "needs-support";
+
+        support.innerText =
+            supportSuggestions[area];
+
+
+        supportAreas.push(area);
+
+        let li =
+            document.createElement("li");
+
+
+        li.innerHTML =
+        "<b>" +
+        capitalize(area) +
+        ":</b> " +
+        supportSuggestions[area];
+
+
+        supportList.appendChild(li);
+
+    }
+
+    else {
+
+        status.innerText =
+            "✓ Strength / Good Progress";
+
+        status.className =
+            "good-status";
+
+        support.innerText =
+            "Continue regular practice.";
+
+    }
+
+}
+
+
+/* ================= CAPITALIZE ================= */
+
+function capitalize(text) {
+
+    return text.charAt(0).toUpperCase()
+        + text.slice(1);
+
+}
+
+
+/* ================= DISPLAY RESULTS ================= */
+
+showResult(
+    "reading",
+    performance.reading
+);
+
+
+showResult(
+    "writing",
+    performance.writing
+);
+
+
+showResult(
+    "mathematics",
+    performance.mathematics
+);
+
+
+showResult(
+    "memory",
+    performance.memory
+);
+
+
+showResult(
+    "attention",
+    performance.attention
+);
+
+
+showResult(
+    "comprehension",
+    performance.comprehension
+);
+
+
+/* ================= OVERALL ================= */
+
+let total =
+
+performance.reading +
+performance.writing +
+performance.mathematics +
+performance.memory +
+performance.attention +
+performance.comprehension;
+
+
+let overall =
+Math.round(total / 6);
+
+
+document.getElementById("overallScore")
+.innerText =
+overall + "%";
+
+
+/* ================= OVERALL MESSAGE ================= */
+
+if (overall >= 80) {
+
+    document.getElementById("overallMessage")
+    .innerText =
+    "Great progress! Keep practicing and exploring new things.";
+
+}
+
+else if (overall >= 60) {
+
+    document.getElementById("overallMessage")
+    .innerText =
+    "Good progress! A little extra practice can make learning stronger.";
+
+}
+
+else {
+
+    document.getElementById("overallMessage")
+    .innerText =
+    "Some areas may benefit from additional learning support.";
+
+}
+
+
+/* ================= DETECTION ================= */
+
+if (supportAreas.length === 0) {
+
+    document.getElementById("detectionTitle")
+    .innerText =
+    "No major support area detected";
+
+
+    document.getElementById("detectionText")
+    .innerText =
+    "The screening shows balanced performance across the assessed areas. Continue regular practice.";
+
+
+    let li =
+        document.createElement("li");
+
+
+    li.innerText =
+    "Continue regular learning activities and revision.";
+
+
+    supportList.appendChild(li);
+
+}
+
+else {
+
+    let names =
+        supportAreas.map(capitalize);
+
+
+    document.getElementById("detectionTitle")
+    .innerText =
+    "Possible Support Area Identified";
+
+
+    document.getElementById("detectionText")
+    .innerText =
+    names.join(", ") +
+    " may benefit from additional practice and personalized support.";
+
+}
+
+
+/* ================= START AGAIN ================= */
+
+function startAgain() {
+
+    localStorage.removeItem("studentInfo");
+
+    localStorage.removeItem("studentPerformance");
+
+    localStorage.removeItem("studentName");
+
+    localStorage.removeItem("studentAge");
+
+    localStorage.removeItem("studentClass");
+
+    window.location.href =
+        "index.html";
+
+}
+
+</script>
+
+</body>
+</html>

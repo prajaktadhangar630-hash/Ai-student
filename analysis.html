@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>AI Screening</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        🌱 AI Learning Support
+    </div>
+
+    <div class="step-text">
+        Step 3 of 3
+    </div>
+
+</header>
+
+
+<main class="analysis-page">
+
+<div class="analysis-card">
+
+
+    <div class="ai-animation">
+        🤖
+    </div>
+
+
+    <span class="badge">
+        AI-ASSISTED SCREENING
+    </span>
+
+
+    <h1>
+        Understanding Your Learning Pattern
+    </h1>
+
+
+    <p id="analysisText">
+        Our system is checking the assessment responses...
+    </p>
+
+
+    <div class="progress-container">
+
+        <div class="progress-bar">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+        <p id="progressText">
+            0%
+        </p>
+
+    </div>
+
+
+    <div class="analysis-steps">
+
+        <div id="step1" class="analysis-step">
+            ○ Checking learning responses
+        </div>
+
+        <div id="step2" class="analysis-step">
+            ○ Calculating area-wise performance
+        </div>
+
+        <div id="step3" class="analysis-step">
+            ○ Detecting possible support areas
+        </div>
+
+        <div id="step4" class="analysis-step">
+            ○ Preparing personalized support
+        </div>
+
+    </div>
+
+
+    <div class="algorithm-box">
+
+        <strong>Screening Logic</strong>
+
+        <p>
+            Response patterns → Area-wise score →
+            Support identification → Personalized suggestion
+        </p>
+
+    </div>
+
+
+</div>
+
+</main>
+
+
+<script>
+
+let performance =
+    localStorage.getItem("studentPerformance");
+
+if (!performance) {
+
+    alert("Assessment data not found.");
+
+    window.location.href = "assessment.html";
+
+}
+
+
+let progress = 0;
+
+let progressBar =
+    document.getElementById("progressBar");
+
+let progressText =
+    document.getElementById("progressText");
+
+
+let interval = setInterval(function () {
+
+    progress += 5;
+
+    progressBar.style.width =
+        progress + "%";
+
+    progressText.innerText =
+        progress + "%";
+
+
+    if (progress >= 25) {
+
+        document.getElementById("step1")
+        .innerHTML =
+        "✓ Checking learning responses";
+
+    }
+
+
+    if (progress >= 50) {
+
+        document.getElementById("step2")
+        .innerHTML =
+        "✓ Calculating area-wise performance";
+
+    }
+
+
+    if (progress >= 75) {
+
+        document.getElementById("step3")
+        .innerHTML =
+        "✓ Detecting possible support areas";
+
+    }
+
+
+    if (progress >= 90) {
+
+        document.getElementById("step4")
+        .innerHTML =
+        "✓ Preparing personalized support";
+
+    }
+
+
+    if (progress >= 100) {
+
+        clearInterval(interval);
+
+        document.getElementById("analysisText")
+        .innerText =
+        "Screening completed! Preparing your personalized learning result...";
+
+
+        setTimeout(function () {
+
+            window.location.href =
+            "result.html";
+
+        }, 1000);
+
+    }
+
+}, 100);
+
+</script>
+
+</body>
+</html>
