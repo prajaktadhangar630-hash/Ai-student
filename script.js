@@ -41,7 +41,7 @@ function loginUser(event) {
         setTimeout(function () {
 
             window.location.href =
-                "index.html";
+    "student.html";
 
         }, 600);
 
