@@ -458,9 +458,8 @@ async function submitDynamicAssessment(event) {
         );
 
 
-       window.location.href =
-    "student.html";
-
+     window.location.href =
+    "analysis.html";  
 
     } catch (error) {
 
