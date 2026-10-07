@@ -432,9 +432,10 @@ async function submitDynamicAssessment(event) {
     try {
 
         const response =
-            await fetch(
-                "https://ai-student-v1x5.onrender.com/api/analyze",
-                {
+          await fetch(
+    "https://ai-student-v1x5.onrender.com/api/analyze",
+    {
+                
                     method: "POST",
 
                     headers: {
