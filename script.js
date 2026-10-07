@@ -128,7 +128,7 @@ function saveStudent(event) {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/api/analyze",
+            https://ai-student-v1x5.onrender.com
             {
                 method: "POST",
 
